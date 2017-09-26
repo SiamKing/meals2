@@ -6,5 +6,20 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
+console.log('Hello World from TJ')
+import angular from 'angular';
+import uirouter from '@uirouter/core';
 
-console.log('Hello World from Webpacker')
+let meals = angular.module('meals', [uirouter])
+  .config(['$stateProvider', function($stateProvider) {
+    $stateProvider
+      .state('home', {
+        url: '/',
+        controller: function() {
+          this.name = 'TJ'
+        },
+        template: `<h1>{{name}}</h1>`
+      })
+  }])
+
+export default meals;
