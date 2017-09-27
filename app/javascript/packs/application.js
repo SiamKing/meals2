@@ -8,18 +8,18 @@
 // layout file, like app/views/layouts/application.html.erb
 console.log('Hello World from TJ')
 import angular from 'angular';
-import uirouter from '@uirouter/core';
+import uirouter from 'angular-ui-router';
+import HomeComponent from './home/home.component';
 
-let meals = angular.module('meals', [uirouter])
-  .config(['$stateProvider', function($stateProvider) {
+var meals = angular.module('meals', [uirouter])
+  .component('home', HomeComponent)
+  .config(($stateProvider) => {
     $stateProvider
       .state('home', {
         url: '/',
-        controller: function() {
-          this.name = 'TJ'
-        },
-        template: `<h1>{{name}}</h1>`
+        component: 'home'
       })
-  }])
+  })
+
 
 export default meals;
