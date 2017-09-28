@@ -2,7 +2,10 @@ import HomeController from './home.controller';
 
 const HomeComponent = {
   controller: HomeController,
-  template: `<h1 ng-model="$ctrl.name">What is your name?</h1>`
+  template: `<form>
+             <label>What is your name?</label>
+             <input ng-model="$ctrl.name"/>
+             <a type="submit" class="btn btn-primary" ng-submit="$ctrl.addName()" ui-sref="user">Submit</a>`
 }
 
 export default HomeComponent;

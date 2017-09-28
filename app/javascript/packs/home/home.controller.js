@@ -1,6 +1,6 @@
 class HomeController {
   $onInit() {
-    this.name = 'TJ'
+    this.name = ''
   }
 
   addName(name) {
